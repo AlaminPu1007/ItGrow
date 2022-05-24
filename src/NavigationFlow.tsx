@@ -7,10 +7,14 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 //for tab navigation
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+// bring tab navigation screen
+import TradingScreen from './Screen/TradingScreen';
+import QuotesScreen from './Screen/QuotesScreen';
 
 // type for auth stack
 export type RootStackParamList = {
-  Home: undefined;
+  Trading: undefined;
+  Quotes: undefined;
 };
 
 // const AuthStack = createNativeStackNavigator<RootStackParamList>();
@@ -29,14 +33,6 @@ export type RootStackParamList = {
 //   );
 // };
 
-const HomeScreen = () => {
-  return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
-  );
-};
-
 //define tab navigation
 const Tab = createBottomTabNavigator<RootStackParamList>();
 
@@ -53,7 +49,8 @@ const HomeTabNavigation = () => {
           fontSize: 15,
         },
       }}>
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Trading" component={TradingScreen} />
+      <Tab.Screen name="Quotes" component={QuotesScreen} />
     </Tab.Navigator>
   );
 };
