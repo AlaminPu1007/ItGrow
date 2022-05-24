@@ -7,7 +7,7 @@
 import {ActionType} from './DashboardActionCreator';
 import axios from 'axios';
 import store from '../store';
-import {io} from 'socket.io-client';
+import io from 'socket.io-client';
 //distract dispatch from store
 const {dispatch} = store;
 
